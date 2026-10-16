@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ListingCard from '../../components/ListingCard.astro';
+import { getPublishedListings } from '../../lib/listings';
+
+const listings = await getPublishedListings();
+---
+
+<BaseLayout
+  title="Listings"
+  description="Curated home AI system listings for executive dads, each with category, price, and Presence Audit results."
+>
+  <article class="prose-wrap">
+    <p class="kicker">The Presence Directory</p>
+    <h1>Listings</h1>
+    <p class="lead">
+      Every published system is a markdown file in the listings collection. Frontmatter is validated before the build: name, url, category, price, and audit results.
+    </p>
+    {
+      listings.length === 0 ? (
+        <div class="empty-state">
+          <p>
+            No systems are listed yet. The example template in the repository is labeled as an example and is excluded from this page.
+          </p>
+          <p>
+            If you know a home AI system that belongs here, <a href="/submit">submit it for review</a>.
+          </p>
+        </div>
+      ) : (
+        <ul class="listing-list">
+          {listings.map((listing) => (
+            <ListingCard listing={listing} />
+          ))}
+        </ul>
+      )
+    }
+  </article>
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+/**
+ * Sponsor slot. Empty and hidden by default.
+ * Pass visible={true} and slot content when a sponsor is live.
+ */
+interface Props {
+  visible?: boolean;
+}
+
+const { visible = false } = Astro.props;
+---
+
+<aside class="sponsor-slot" hidden={!visible} aria-label="Sponsor">
+  <p class="kicker">Sponsor</p>
+  <slot />
+</aside>

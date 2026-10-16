@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, SUBMIT_MAILTO } from '../lib/site';
+---
+
+<BaseLayout
+  title="Submit a system"
+  description="Submit a home AI system for review in The Presence Directory by email."
+>
+  <article class="prose-wrap">
+    <p class="kicker">Curated on purpose</p>
+    <h1>Submit a system</h1>
+    <p class="lead">
+      If you built, use, or watch a home AI system that might belong here, send a short note. There is no automated form. Email keeps the review human.
+    </p>
+    <div class="stack">
+      <p>Please include:</p>
+      <ul>
+        <li>System name</li>
+        <li>URL</li>
+        <li>Category, in your own words</li>
+        <li>Price, as the maker states it</li>
+        <li>Why it might help an executive dad be present at home</li>
+      </ul>
+      <p>
+        A submission is a request for review, not a promise of listing. Do not send invented metrics. If a claim cannot be checked, it will not be published.
+      </p>
+    </div>
+    <div class="actions">
+      <a class="btn" href={SUBMIT_MAILTO}>Email {SITE.submitEmail}</a>
+    </div>
+  </article>
+</BaseLayout>
