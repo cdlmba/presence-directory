@@ -360,7 +360,7 @@ export const ROUTE_CTA: Record<
     tag: 'DIY',
     label: 'Get the Presence Checklist',
     href: OFFERS.checklist.href,
-    detail: 'Free. A next step you can run at home this week.',
+    detail: 'Grab the free Presence Checklist.',
   },
   GUIDED: {
     tag: 'GUIDED',
