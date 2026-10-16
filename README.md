@@ -49,7 +49,7 @@ Routing:
 
 Done-for-you pricing is not shown.
 
-`/checklist` is a placeholder until Christopher pastes the Presence Checklist as-is.
+`/checklist` is The Presence Checklist, with interactive checkboxes that also print. Copy and links match Christopher's approved spec.
 
 ## Vercel setup
 

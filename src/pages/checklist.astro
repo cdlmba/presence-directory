@@ -1,20 +1,57 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { CHECKLIST, checklistItemId } from '../lib/checklist';
 ---
 
-<BaseLayout
-  title="The Presence Checklist"
-  description="The Presence Checklist for executive dads. Placeholder until Christopher pastes the checklist as-is."
->
-  <article class="prose-wrap">
-    <p class="kicker">DIY next step</p>
-    <h1>The Presence Checklist</h1>
-    <p class="lead">
-      This is the free checklist offered at the end of The Presence Audit. Until the full list is pasted in, this page holds the marked placeholder only.
-    </p>
-    <aside class="checklist-placeholder" role="note" aria-label="Checklist placeholder">
-      <p class="kicker">Placeholder. Paste below this label.</p>
-      <p class="checklist-copy">Christopher to paste Presence Checklist as-is</p>
-    </aside>
+<BaseLayout title={CHECKLIST.title} description={CHECKLIST.companion}>
+  <article class="prose-wrap checklist-page">
+    <h1>{CHECKLIST.title}</h1>
+    <p class="lead"><em>{CHECKLIST.companion}</em></p>
+    {CHECKLIST.intro.map((paragraph) => <p>{paragraph}</p>)}
+
+    {
+      CHECKLIST.sections.map((section, sectionIndex) => (
+        <section class="checklist-section" aria-labelledby={`checklist-s${sectionIndex}`}>
+          <h2 id={`checklist-s${sectionIndex}`}>{section.title}</h2>
+          {section.groups.map((group, groupIndex) => (
+            <div class="checklist-group">
+              {'heading' in group && group.heading ? <h3>{group.heading}</h3> : null}
+              <ul class="check-list">
+                {group.items.map((text, itemIndex) => {
+                  const id = checklistItemId(sectionIndex, groupIndex, itemIndex);
+                  return (
+                    <li>
+                      <label class="check-item" for={id}>
+                        <input id={id} type="checkbox" data-item={id} />
+                        <span>{text}</span>
+                      </label>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          ))}
+        </section>
+      ))
+    }
+
+    <section class="checklist-section" aria-labelledby="checklist-next">
+      <h2 id="checklist-next">{CHECKLIST.next.title}</h2>
+      <p>{CHECKLIST.next.protect}</p>
+      <p>
+        {CHECKLIST.next.guidedBefore}<strong>{CHECKLIST.next.guidedName}</strong>{CHECKLIST.next.guidedAfter}<a href={CHECKLIST.next.guidedHref}>{CHECKLIST.next.guidedLinkLabel}</a>
+      </p>
+      <p>
+        {CHECKLIST.next.dfy}<a href={CHECKLIST.next.dfyHref}>{CHECKLIST.next.dfyLinkLabel}</a>
+      </p>
+      <p><em>{CHECKLIST.next.closer}</em></p>
+    </section>
   </article>
 </BaseLayout>
+
+<script>
+  import { mountChecklist } from '../scripts/checklist';
+
+  const root = document.querySelector('.checklist-page');
+  if (root instanceof HTMLElement) mountChecklist(root);
+</script>
