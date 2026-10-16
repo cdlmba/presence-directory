@@ -39,10 +39,12 @@ import { CHECKLIST, checklistItemId } from '../lib/checklist';
       <h2 id="checklist-next">{CHECKLIST.next.title}</h2>
       <p>{CHECKLIST.next.protect}</p>
       <p>
-        {CHECKLIST.next.guidedBefore}<strong>{CHECKLIST.next.guidedName}</strong>{CHECKLIST.next.guidedAfter}<a href={CHECKLIST.next.guidedHref}>{CHECKLIST.next.guidedLinkLabel}</a>
+        {CHECKLIST.next.guidedBefore}<strong>{CHECKLIST.next.guidedName}</strong>{CHECKLIST.next.guidedAfter}
+        <a href={CHECKLIST.next.guidedHref}>{CHECKLIST.next.guidedLinkLabel}</a>
       </p>
       <p>
-        {CHECKLIST.next.dfy}<a href={CHECKLIST.next.dfyHref}>{CHECKLIST.next.dfyLinkLabel}</a>
+        {CHECKLIST.next.dfy}
+        <a href={CHECKLIST.next.dfyHref}>{CHECKLIST.next.dfyLinkLabel}</a>
       </p>
       <p><em>{CHECKLIST.next.closer}</em></p>
     </section>

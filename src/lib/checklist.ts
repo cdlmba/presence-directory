@@ -118,10 +118,10 @@ export const CHECKLIST = {
     guidedBefore: 'If you\'d like to build it yourself with some guidance, ',
     guidedName: 'Presence Build, Guided',
     guidedAfter:
-      ' is $97. You get this checklist, a kickoff call with me, and a check-in two weeks later. ',
+      ' is $97. You get this checklist, a kickoff call with me, and a check-in two weeks later.',
     guidedLinkLabel: 'Get Presence Build, Guided',
     guidedHref: 'https://buy.stripe.com/cNiaEXbVc1zUaC6ewUdnW0k',
-    dfy: "If you'd rather have it built for you, book a free 30-minute discovery call. We'll look at what's going on at home and whether I'm the right person to help. No pitch. ",
+    dfy: "If you'd rather have it built for you, book a free 30-minute discovery call. We'll look at what's going on at home and whether I'm the right person to help. No pitch.",
     dfyLinkLabel: 'Book a discovery call',
     dfyHref: 'https://calendar.app.google/av21uA54RnvWJbSs7',
     closer: "The kids don't need you to remember the water bill. They need you there when they tell you about their day.",
