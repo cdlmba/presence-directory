@@ -35,6 +35,22 @@ Filenames that start with `_` are templates. They are not published as listing p
 
 There are no published listings in this repository.
 
+## The Presence Audit
+
+`/audit` is a client-side scored quiz. Questions, options, scoring, bands, and result copy live in `src/lib/audit.ts` and follow Christopher's approved spec.
+
+Submit collects first name, email, optional phone, and a Substack opt-in. There is no backend yet, so the result screen also opens a prefilled mailto to `chris@christopherlynnsystems.com`. `postAuditToGoogleSheet` in `src/lib/audit.ts` is the TODO hook for a later Google Sheet.
+
+Routing:
+
+- DIY leads to `/checklist`
+- GUIDED leads to Presence Build, Guided ($97): https://buy.stripe.com/cNiaEXbVc1zUaC6ewUdnW0k
+- DFY and Band 3 (per the spec rules) lead to the discovery call: https://calendar.app.google/av21uA54RnvWJbSs7
+
+Done-for-you pricing is not shown.
+
+`/checklist` is a placeholder until Christopher pastes the Presence Checklist as-is.
+
 ## Vercel setup
 
 1. Import this GitHub repository in Vercel.

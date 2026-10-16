@@ -1,28 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { verifyAuditLogic } from '../lib/audit';
+
+verifyAuditLogic();
 ---
 
 <BaseLayout
   title="The Presence Audit"
-  description="The Presence Audit is the checklist used before a home AI system is listed in The Presence Directory."
+  description="A free 5-minute self-assessment for executive dads. Companion to How I Onboard an Executive Dad."
 >
-  <article class="prose-wrap">
-    <p class="kicker">Review before listing</p>
-    <h1>The Presence Audit</h1>
-    <p class="lead">
-      A system does not land here because it is clever. It lands here if it can serve a household without stealing the evening.
-    </p>
-    <div class="stack">
-      <p>
-        The Presence Audit is the checklist used before a listing is published. The aim is simple: would this tool help an executive dad be present with the people entrusted to him, or would it pull him back into a screen?
-      </p>
-      <p>
-        The checklist itself belongs in the marked space below. Until it is pasted in, this page holds the placeholder only. No items, scores, or pass rates are invented here.
-      </p>
+  <div class="quiz-wrap">
+    <div id="audit-quiz">
+      <noscript>
+        <p>
+          This audit runs in your browser. Please enable JavaScript, or email
+          <a href="mailto:chris@christopherlynnsystems.com">chris@christopherlynnsystems.com</a>
+          to take it by hand.
+        </p>
+      </noscript>
     </div>
-    <aside class="checklist-placeholder" role="note" aria-label="Checklist placeholder">
-      <p class="kicker">Placeholder. Paste below this label.</p>
-      <p class="checklist-copy">Christopher to paste checklist as-is</p>
-    </aside>
-  </article>
+  </div>
 </BaseLayout>
+
+<script>
+  import { mountAuditQuiz } from '../scripts/audit-quiz';
+
+  const root = document.getElementById('audit-quiz');
+  if (root) mountAuditQuiz(root);
+</script>

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import OfferLink from '../components/OfferLink.astro';
+import Offers from '../components/Offers.astro';
 import { SITE } from '../lib/site';
 ---
 
@@ -20,8 +20,8 @@ import { SITE } from '../lib/site';
       </p>
     </div>
     <div class="actions">
-      <a class="btn" href="/listings">Browse listings</a>
-      <a class="btn btn-secondary" href="/audit">Read The Presence Audit</a>
+      <a class="btn" href="/audit">Take The Presence Audit</a>
+      <a class="btn btn-secondary" href="/listings">Browse listings</a>
       <a class="btn btn-secondary" href="/submit">Submit a system</a>
     </div>
     <section class="panel" aria-labelledby="empty-shelf">
@@ -33,9 +33,9 @@ import { SITE } from '../lib/site';
     <section aria-labelledby="offer-heading">
       <h2 id="offer-heading">Work with Christopher</h2>
       <p>
-        If you want help putting the house in order as an executive dad, this placeholder points to the current offer until a dedicated link is set.
+        Take the free Presence Audit first. Then grab the checklist, buy Presence Build, Guided, or book a discovery call. Done-for-you pricing is not shown here.
       </p>
-      <p><OfferLink /></p>
+      <Offers />
     </section>
   </article>
 </BaseLayout>

@@ -258,6 +258,11 @@ h3 {
   color: var(--forest-deep);
 }
 
+button.btn {
+  cursor: pointer;
+  font-family: inherit;
+}
+
 .panel {
   margin-top: 1.6rem;
   padding: 1.15rem 1.2rem 1.2rem;
@@ -392,6 +397,169 @@ h3 {
 
 .sponsor-slot[hidden] {
   display: none;
+}
+
+.quiz-wrap {
+  width: min(46rem, calc(100% - 2.5rem));
+  margin-inline: auto;
+}
+
+.quiz-progress {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+}
+
+.quiz-panel h1,
+.quiz-panel h2 {
+  outline: none;
+}
+
+.quiz-fields {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.quiz-field {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.quiz-field legend,
+.quiz-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.quiz-helper {
+  margin: 0 0 0.65rem;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.quiz-group-heading {
+  margin: 0.4rem 0 0;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  font-weight: 650;
+}
+
+.req {
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+.quiz-options {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.quiz-option,
+.quiz-check {
+  display: flex;
+  gap: 0.55rem;
+  align-items: flex-start;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--rule);
+  background: var(--paper-raised);
+  cursor: pointer;
+}
+
+.quiz-option:has(input:checked),
+.quiz-check:has(input:checked) {
+  border-color: var(--forest);
+}
+
+.quiz-scale {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.quiz-scale-ticks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.quiz-tick {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  min-width: 2.4rem;
+  padding: 0.35rem 0.4rem;
+  border: 1px solid var(--rule);
+  background: var(--paper-raised);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.quiz-tick:has(input:checked) {
+  border-color: var(--forest);
+  background: #e7eee9;
+}
+
+.quiz-scale-end {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.quiz-field input[type="text"],
+.quiz-field input[type="email"],
+.quiz-field input[type="tel"],
+.quiz-field textarea {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--rule);
+  background: var(--paper-raised);
+  color: inherit;
+  font: inherit;
+}
+
+.quiz-error {
+  margin: 0.9rem 0 0;
+  color: #8a2c16;
+  outline: none;
+}
+
+.quiz-lead {
+  margin: 1.3rem 0 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--forest);
+  background: var(--paper-raised);
+}
+
+.quiz-also {
+  margin: 0.4rem 0 1rem;
+  padding-left: 1.15rem;
+}
+
+.offers {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.offer-card {
+  padding: 1rem 1.1rem 1.1rem;
+  border: 1px solid var(--rule);
+  background: var(--paper-raised);
+}
+
+.offer-card h3 {
+  margin: 0.15rem 0 0.35rem;
+}
+
+.offer-price {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+
+.offer-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.15rem;
 }
 
 @media (max-width: 640px) {

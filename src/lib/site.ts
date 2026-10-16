@@ -5,10 +5,24 @@ export const SITE = {
     'The Presence Directory lists home AI systems reviewed for whether they help a father be present with his family.',
   url: 'https://presence.thesystemsdad.com',
   submitEmail: 'chris@christopherlynnsystems.com',
-  offer: {
-    href: 'https://thesystemsdad.com/',
-    label: "Christopher's executive-dad offer",
-    placeholderNote: 'Placeholder link. Destination may change.',
+} as const;
+
+export const OFFERS = {
+  checklist: {
+    href: '/checklist',
+    label: 'Presence Checklist',
+  },
+  guided: {
+    name: 'Presence Build, Guided',
+    price: '$97',
+    href: 'https://buy.stripe.com/cNiaEXbVc1zUaC6ewUdnW0k',
+    includes:
+      'Includes the Presence Checklist, a kickoff call with Christopher, and a check-in two weeks later.',
+  },
+  discovery: {
+    name: 'Discovery call',
+    duration: '30 min, free',
+    href: 'https://calendar.app.google/av21uA54RnvWJbSs7',
   },
 } as const;
 
