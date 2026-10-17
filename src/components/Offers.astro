@@ -1,0 +1,24 @@
+---
+import { OFFERS } from '../lib/site';
+---
+
+<div class="offers">
+  <article class="offer-card">
+    <p class="kicker">Guided</p>
+    <h3>{OFFERS.guided.name}</h3>
+    <p class="offer-price">{OFFERS.guided.price}</p>
+    <p>{OFFERS.guided.includes}</p>
+    <p>
+      <a class="btn" href={OFFERS.guided.href}>Buy {OFFERS.guided.name}</a>
+    </p>
+  </article>
+  <article class="offer-card">
+    <p class="kicker">Talk first</p>
+    <h3>{OFFERS.discovery.name}</h3>
+    <p class="offer-price">{OFFERS.discovery.duration}</p>
+    <p>A 30-minute look at what is going on at home, and whether Christopher is the right person to help. Done-for-you pricing is not listed here. That is for the call.</p>
+    <p>
+      <a class="btn btn-secondary" href={OFFERS.discovery.href}>Book a discovery call</a>
+    </p>
+  </article>
+</div>

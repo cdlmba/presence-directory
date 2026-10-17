@@ -1,0 +1,11 @@
+---
+import { OFFERS } from '../lib/site';
+---
+
+<span class="offer-links">
+  <a href={OFFERS.checklist.href}>{OFFERS.checklist.label}</a>
+  <span aria-hidden="true"> · </span>
+  <a href={OFFERS.guided.href}>{OFFERS.guided.name} ({OFFERS.guided.price})</a>
+  <span aria-hidden="true"> · </span>
+  <a href={OFFERS.discovery.href}>{OFFERS.discovery.name} ({OFFERS.discovery.duration})</a>
+</span>

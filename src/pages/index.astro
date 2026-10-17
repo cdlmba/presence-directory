@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Offers from '../components/Offers.astro';
+import { SITE } from '../lib/site';
+---
+
+<BaseLayout title={SITE.title}>
+  <article class="prose-wrap">
+    <p class="kicker">For executive dads</p>
+    <h1>Home AI systems that leave room for the people in the room.</h1>
+    <p class="lead">
+      Work already fills the calendar. The house needs tools that protect attention, not another dashboard that follows you to the dinner table.
+    </p>
+    <div class="stack">
+      <p>
+        The Presence Directory is a curated public list of home AI systems for executive dads. Each listing is one markdown file with a name, a url, a category, a price, and Presence Audit results. Nothing is listed until it has been reviewed.
+      </p>
+      <p>
+        Presence is a form of stewardship. The people under your roof are not a side project. A system that earns a place here should help a father close the laptop and look up.
+      </p>
+    </div>
+    <div class="actions">
+      <a class="btn" href="/audit">Take The Presence Audit</a>
+      <a class="btn btn-secondary" href="/listings">Browse listings</a>
+      <a class="btn btn-secondary" href="/submit">Submit a system</a>
+    </div>
+    <section class="panel" aria-labelledby="empty-shelf">
+      <h2 id="empty-shelf">The shelf is empty on purpose</h2>
+      <p>
+        There are no listings yet. This directory does not invent tools, scores, or testimonials. When a system has been audited, it will appear on the listings page.
+      </p>
+    </section>
+    <section aria-labelledby="offer-heading">
+      <h2 id="offer-heading">Work with Christopher</h2>
+      <p>
+        Take the free Presence Audit first. Then grab the checklist, buy Presence Build, Guided, or book a discovery call. Done-for-you pricing is not shown here.
+      </p>
+      <Offers />
+    </section>
+  </article>
+</BaseLayout>

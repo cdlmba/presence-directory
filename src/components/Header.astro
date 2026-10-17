@@ -1,0 +1,41 @@
+---
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/listings', label: 'Listings' },
+  { href: '/audit', label: 'The Presence Audit' },
+  { href: '/checklist', label: 'Checklist' },
+  { href: '/submit', label: 'Submit a system' },
+];
+
+function isCurrent(href: string) {
+  if (href === '/') return path === '/';
+  return path === href || path.startsWith(`${href}/`);
+}
+---
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="/">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="3" fill="#1b2f28"></rect>
+        <path d="M8 30V16.5L20 8l12 8.5V30H8Z" fill="none" stroke="#f3eee4" stroke-width="1.6"></path>
+        <rect x="17.2" y="20" width="5.6" height="10" fill="#c47a52"></rect>
+      </svg>
+      <span class="wordmark-text">
+        <span class="wordmark-kicker">The Systems Dad</span>
+        <span class="wordmark-name">The Presence Directory</span>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      {
+        links.map((link) => (
+          <a href={link.href} aria-current={isCurrent(link.href) ? 'page' : undefined}>
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,65 @@
+---
+import { render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedListings } from '../../lib/listings';
+
+export async function getStaticPaths() {
+  const listings = await getPublishedListings();
+  return listings.map((listing) => ({
+    params: { id: listing.id },
+    props: { listing },
+  }));
+}
+
+interface Props {
+  listing: CollectionEntry<'listings'>;
+}
+
+const { listing } = Astro.props;
+const { Content } = await render(listing);
+const { name, url, category, price, auditResults } = listing.data;
+---
+
+<BaseLayout title={name} description={`${name} in The Presence Directory. Category: ${category}. Price: ${price}.`}>
+  <article class="prose-wrap">
+    <p class="kicker">Listing</p>
+    <h1>{name}</h1>
+    <p class="meta">
+      <span>{category}</span>
+      <span>{price}</span>
+    </p>
+    <p>
+      <a class="visit-link" href={url} rel="noopener noreferrer">{url}</a>
+    </p>
+    <section aria-labelledby="audit-heading">
+      <h2 id="audit-heading">Presence Audit results</h2>
+      {
+        auditResults.length === 0 ? (
+          <p class="muted">No audit results recorded for this listing.</p>
+        ) : (
+          <table class="audit-table">
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Result</th>
+              </tr>
+            </thead>
+            <tbody>
+              {auditResults.map((row) => (
+                <tr>
+                  <th scope="row">{row.item}</th>
+                  <td>{row.result}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )
+      }
+    </section>
+    <section aria-labelledby="notes-heading">
+      <h2 id="notes-heading">Notes</h2>
+      <Content />
+    </section>
+  </article>
+</BaseLayout>

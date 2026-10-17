@@ -1,0 +1,17 @@
+---
+import OfferLink from './OfferLink.astro';
+import { SITE } from '../lib/site';
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>
+      {SITE.title}. A curated public directory for executive dads.
+    </p>
+    <p>
+      <OfferLink />
+      <span aria-hidden="true"> · </span>
+      <a href={`mailto:${SITE.submitEmail}`}>{SITE.submitEmail}</a>
+    </p>
+  </div>
+</footer>

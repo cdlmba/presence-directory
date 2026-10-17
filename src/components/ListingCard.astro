@@ -1,0 +1,20 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  listing: CollectionEntry<'listings'>;
+}
+
+const { listing } = Astro.props;
+const { name, category, price } = listing.data;
+---
+
+<li>
+  <a class="listing-card" href={`/listings/${listing.id}`}>
+    <h2>{name}</h2>
+    <p class="meta">
+      <span>{category}</span>
+      <span>{price}</span>
+    </p>
+  </a>
+</li>

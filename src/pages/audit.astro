@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { verifyAuditLogic } from '../lib/audit';
+
+verifyAuditLogic();
+---
+
+<BaseLayout
+  title="The Presence Audit"
+  description="A free 5-minute self-assessment for executive dads. Companion to How I Onboard an Executive Dad."
+>
+  <div class="quiz-wrap">
+    <div id="audit-quiz">
+      <noscript>
+        <p>
+          This audit runs in your browser. Please enable JavaScript, or email
+          <a href="mailto:chris@christopherlynnsystems.com">chris@christopherlynnsystems.com</a>
+          to take it by hand.
+        </p>
+      </noscript>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  import { mountAuditQuiz } from '../scripts/audit-quiz';
+
+  const root = document.getElementById('audit-quiz');
+  if (root) mountAuditQuiz(root);
+</script>
