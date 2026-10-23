@@ -1,5 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import { path } from '../lib/paths';
 
 interface Props {
   listing: CollectionEntry<'listings'>;
@@ -10,7 +11,7 @@ const { name, category, price } = listing.data;
 ---
 
 <li>
-  <a class="listing-card" href={`/listings/${listing.id}`}>
+  <a class="listing-card" href={path(`/listings/${listing.id}`)}>
     <h2>{name}</h2>
     <p class="meta">
       <span>{category}</span>

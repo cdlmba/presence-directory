@@ -1,15 +1,17 @@
+import { SITE_URL, path } from './paths';
+
 export const SITE = {
   title: 'The Presence Directory',
   tagline: 'A curated public directory of home AI systems for executive dads.',
   description:
     'The Presence Directory lists home AI systems reviewed for whether they help a father be present with his family.',
-  url: 'https://presence.thesystemsdad.com',
+  url: SITE_URL,
   submitEmail: 'chris@christopherlynnsystems.com',
 } as const;
 
 export const OFFERS = {
   checklist: {
-    href: '/checklist',
+    href: path('/checklist'),
     label: 'Presence Checklist',
   },
   guided: {

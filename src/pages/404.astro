@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { path } from '../lib/paths';
 ---
 
 <BaseLayout title="Page not found" description="This page is not in The Presence Directory.">
@@ -8,8 +9,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h1>This page is not here.</h1>
     <p class="lead">The link may be old, or the listing may not be published yet.</p>
     <div class="actions">
-      <a class="btn" href="/">Back home</a>
-      <a class="btn btn-secondary" href="/listings">View listings</a>
+      <a class="btn" href={path('/')}>Back home</a>
+      <a class="btn btn-secondary" href={path('/listings')}>View listings</a>
     </div>
   </article>
 </BaseLayout>
